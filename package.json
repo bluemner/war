@@ -1,0 +1,27 @@
+{
+  "name": "WAR",
+  "version": "1.0.0",
+  "description": "Website & Application Response",
+  "main": "server.js",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "express": "^4.13.3",
+    "http": "^0.0.0",
+    "jquery": "^2.1.4",
+    "socket.io": "^1.3.7",
+    "vis": "^4.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js",  
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "website",
+    "application",
+    "response",
+    "war"
+  ],
+  "author": "Brandon Bluemner",
+  "license": "MIT"
+}

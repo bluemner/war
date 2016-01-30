@@ -1,0 +1,49 @@
+
+<h1 class="page-header hidden-xs hidden-sm">Website & Application Response Dashboard</h1>
+
+<div class="row placeholders">
+    <div class="col-xs-6  col-md-3 ">
+        <span id="war-db-status-glyphicon-all" class="glyphicon glyphicon-ban-circle  glyphicon-large"></span>
+        <h4>Status</h4>
+        <span id="war-db-status-text-all" class="text-muted">Refresh page</span>
+    </div>
+
+    <div class="col-xs-6  col-md-3 ">
+        <span id="war-db-status-glyphicon-online" class="glyphicon glyphicon-ok-circle green glyphicon-large"></span>
+        <h4>Online</h4>
+        <span id="war-db-status-text-online" class="text-muted">Online : 0</span>
+    </div>
+    <div class="col-xs-6 col-md-3 ">
+        <span id="war-db-status-glyphicon-warnning" class="glyphicon glyphicon-exclamation-sign orange glyphicon-large"></span>
+        <h4>Warnning</h4>
+        <span id="war-db-status-text-warnning" class="text-muted">Warnnings : 0</span>
+    </div>
+    <div class="col-xs-6  col-md-3 ">
+        <span id="war-db-status-glyphicon-error" class="glyphicon glyphicon-remove-circle red glyphicon-large"></span>
+        <h4>Error</h4>
+        <span id="war-db-status-text-error" class="text-muted">Errors : 0</span>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table id="war-board" class="table table-striped table-condensed">
+        <thead>
+            <tr>
+                <th class="col-md-1">#</th>
+                <th class="col-md-1">Status</th>
+                <th class="col-md-1 ">Code</th>
+                <th class="col-md-3">Name</th>
+                <th class="col-md-6">Message</th>
+            </tr>
+        </thead>
+        <tbody id="war-board-body"></tbody>
+    </table>
+    <!--
+    <span class="glyphicon glyphicon-ok-circle green"></span>
+    <label>&nbspOnline</label>
+    <span class="glyphicon glyphicon-exclamation-sign orange"></span>
+    <label>&nbspWarnning</label>
+    <span class="glyphicon glyphicon-remove-circle red"></span>
+    <label>&nbspError</label>
+    -->
+</div>

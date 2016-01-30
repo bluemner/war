@@ -1,0 +1,135 @@
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-61231638-1', 'auto');ga('send', 'pageview');</script>
+
+<div id="visualization"></div>
+<style>
+    .vis-graph-group0 {
+      fill:#F00;
+      fill-opacity:0;
+      stroke-width:2px;
+      stroke: #A00;
+    }
+
+    .vis-graph-group1 {
+      fill:#f79646;
+      fill-opacity:0;
+      stroke-width:2px;
+      stroke: #f79646;
+    }
+   .vis-graph-group2 {
+      fill: #75c841;
+      fill-opacity:0;
+      stroke-width:2px;
+      stroke: #75c841;
+    }
+</style>
+<script type="text/javascript">
+    // create a dataSet with groups
+    var names =['Error', 'Warrning', 'Online']; //['SquareShaded', 'Bargraph', 'Blank', 'CircleShaded'];
+    var groups = new vis.DataSet();
+     
+     /*
+        groups.add({
+        id: 0,
+        content: names[0],
+        options: {
+            drawPoints: {
+                style: 'square' // square, circle
+            },
+            shaded: {
+                orientation: 'bottom' // top, bottom
+            }
+        }});
+
+    groups.add({
+        id: 1,
+        content: names[1],
+        options: {
+            style:'bar'
+        }});
+
+    groups.add({
+        id: 2,
+        content: names[2],
+        options: {drawPoints: false}
+    });
+
+    groups.add({
+        id: 3,
+        content: names[3],
+        options: {
+            drawPoints: {
+                style: 'circle' // square, circle
+            },
+            shaded: {
+                orientation: 'top' // top, bottom
+            }
+        }});
+   */
+ groups.add({
+        id: 0,
+        content: names[0],
+        options: {
+            drawPoints: {
+                style: 'circle' // square, circle
+            },
+            shaded: {
+                orientation: 'bottom' // top, bottom
+            }
+        }
+       });
+      groups.add({
+        id: 1,
+        content: names[1],
+         options: {
+            drawPoints: {
+                style: 'circle' // square, circle
+            },
+            shaded: {
+                orientation: 'bottom' // top, bottom
+            }
+        }
+      });
+
+    groups.add({
+        id: 2,
+        content: names[2],
+        options: {
+            drawPoints: {
+                style: 'circle' // square, circle
+            },
+            shaded: {
+                orientation: 'bottom' // top, bottom
+            }
+        }
+    });
+  var container = document.getElementById('visualization');
+  var items = [];
+  var year = 2015;
+  for(var i = 1; i < 13 ; ++i){
+       var max = 0;
+       switch(i){
+           case  2: max = ( year % 4 ===0 )? 29 : 28; // Leap year code
+           case  4:
+           case  6:
+           case  9:
+           case 11:
+                   max = 30;
+                   break;
+           default : 
+                    max = 31;
+                    break;
+       }
+      for(var j =0; j < max; ++j ){
+          var date = year+'-'+i+'-'+j;
+          items.push({x:date, y : (j % 7) , group: (j %3)});
+      }
+  }
+  var dataset = new vis.DataSet(items);
+  var options = {
+      defaultGroup: 'ungrouped',
+      legend: true,
+      start: '2015-01-01',
+      end: '2015-12-31'
+  };
+  var graph2d = new vis.Graph2d(container, dataset, groups, options);
+  </script>

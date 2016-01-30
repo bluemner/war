@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>W.A.R.</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/main.css" rel="stylesheet" type="text/css" />
+    <link href="../css/vis.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/vis.min.js"></script>
+</head>
+<body>
+    <div id="navigation"></div>
+    <div id="show-side-bar-icon" class="hidden-sm hidden-xs col-sm-1 hidden">
+        <span id="show-side-bar" class="glyphicon glyphicon-chevron-right glyphicon-side-bar"></span>
+    </div>                  
+    <div>
+        <div id="main-wrapper" class="container-fluid ">
+            <div class="row "> 
+               <div id="side-bar" class="col-sm-0 col-md-2 sidebar hidden-xs hidden-sm">
+                     <span id="hide-side-bar" class="hide-side-bar-icon-show glyphicon glyphicon-chevron-left glyphicon-side-bar"></span>
+                     <ul class="nav nav-sidebar">
+                        <li id="Dashboard" class="active"><a href="#Home">Dashboard<span class="sr-only">(current)</span></a></li>
+                        <li id="Reports"><a href="#Report">Reports</a></li>
+                        <li id="Analytics"><a href="#Analytics">Analytics</a></li>
+                        <li id="Export"><a href="#a">Export</a></li>
+                    </ul>
+                </div>                
+                <div id="content" class="col-sm-10 col-sm-offset-0 col-md-10 col-md-offset-2 main"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Java Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+        $.extend( war , {
+            settings: { }
+        });
+        window.war.init();
+    });
+    </script>
+</body>
+</html>
